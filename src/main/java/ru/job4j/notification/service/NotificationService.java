@@ -13,12 +13,17 @@ import ru.job4j.notification.repository.NotificationRepository;
 public class NotificationService {
     private final NotificationRepository notifications;
 
+    /**
+     * Отправить пользователою уведомление об изменении статуса заказа.
+     *
+     * @param description сообщение, которое будет добавлено в уведомление.
+     */
     @KafkaListener(topics = "job4j_messengers")
     public void receiveOrder(String description) {
         Notification notification = new Notification();
         notification.setDescription(description);
         notifications.save(notification);
         log.debug(description);
-}
+    }
 
 }

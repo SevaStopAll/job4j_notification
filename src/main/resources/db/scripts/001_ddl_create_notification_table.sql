@@ -3,6 +3,6 @@ create table IF NOT EXISTS notification(
     description varchar(2000)
 );
 
-comment on table notification is 'Таблица блюд';
-comment on column notification.id is 'Идентификатор блюда';
-comment on column notification.description is 'Описание блюда';
+comment on table notification is 'Таблица уведомлений';
+comment on column notification.id is 'Идентификатор уведомления';
+comment on column notification.description is 'Содержание уведомления';
